@@ -6,7 +6,7 @@ import { OptionsComponent } from './options/options.component';
 import { ActionsComponent } from './actions/actions.component';
 import { TemplatesComponent } from './templates/templates.component';
 import { ActionsDemoComponent } from './actions/actions-demo/actions-demo.component';
-import { TreeModule } from 'angular-tree-component';
+import { TreeModule } from '@talentia/angular-tree-component';
 import { TemplatesDemoComponent } from './templates/templates-demo/templates-demo.component';
 import { EventsComponent } from './events/events.component';
 import { StateBindingComponent } from './state-binding/state-binding.component';

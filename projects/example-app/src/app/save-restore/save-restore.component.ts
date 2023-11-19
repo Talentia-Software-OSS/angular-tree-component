@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ITreeState } from 'angular-tree-component';
+import { ITreeState } from '@talentia/angular-tree-component';
 
 const getChildren = () => new Promise((resolve) => {
   setTimeout(() => resolve([

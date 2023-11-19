@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ITreeOptions, ITreeState } from 'angular-tree-component';
+import { ITreeOptions, ITreeState } from '@talentia/angular-tree-component';
 import { v4 } from 'uuid';
 
 @Component({

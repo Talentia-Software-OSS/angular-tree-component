@@ -28,7 +28,13 @@
               "projects/example-app/src/assets"
             ],
             "styles": ["projects/example-app/src/styles.scss"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -68,7 +74,8 @@
               ],
               "tsConfig": "projects/example-app/tsconfig.es5.app.json"
             }
-          }
+          },
+          "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -101,20 +108,10 @@
             ],
             "scripts": []
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/example-app/tsconfig.app.json",
-              "projects/example-app/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
-    "angular-tree-component": {
+    "@talentia/angular-tree-component": {
       "projectType": "library",
       "root": "projects/angular-tree-component",
       "sourceRoot": "projects/angular-tree-component/src",
@@ -123,9 +120,17 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/angular-tree-component/tsconfig.lib.json",
             "project": "projects/angular-tree-component/ng-package.json"
-          }
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/angular-tree-component/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/angular-tree-component/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
@@ -133,16 +138,6 @@
             "main": "projects/angular-tree-component/src/test.ts",
             "tsConfig": "projects/angular-tree-component/tsconfig.spec.json",
             "karmaConfig": "projects/angular-tree-component/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/angular-tree-component/tsconfig.lib.json",
-              "projects/angular-tree-component/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -172,7 +167,13 @@
               "projects/docs-app/src/assets"
             ],
             "styles": ["projects/docs-app/src/styles.scss"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -202,7 +203,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -235,20 +237,8 @@
             "styles": ["projects/docs-app/src/styles.scss"],
             "scripts": []
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/docs-app/tsconfig.app.json",
-              "projects/docs-app/tsconfig.spec.json",
-              "projects/docs-app/e2e/tsconfig.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     }
-  },
-  "defaultProject": "example-app"
+  }
 }
