@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { ITreeOptions, TreeComponent, TreeNode } from 'angular-tree-component';
+import { ITreeOptions, TreeComponent, TreeNode } from '@talentia/angular-tree-component';
 
 @Component({
   selector: 'app-crud',

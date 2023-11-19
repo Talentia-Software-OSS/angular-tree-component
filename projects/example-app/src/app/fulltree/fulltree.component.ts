@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TreeNode, TreeModel, TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions } from 'angular-tree-component';
+import { TreeNode, TreeModel, TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions } from '@talentia/angular-tree-component';
 
 const actionMapping: IActionMapping = {
   mouse: {
@@ -34,15 +34,7 @@ const actionMapping: IActionMapping = {
 @Component({
   selector: 'app-fulltree',
   styles: [
-    `button: {
-        line - height: 24px;
-        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
-        border: none;
-        border-radius: 2px;
-        background: #A3D9F5;
-        cursor: pointer;
-        margin: 0 3px;
-      }`
+    'button {line-height: 24px;box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);border: none;border-radius: 2px;background: #A3D9F5;cursor: pointer;margin: 0 3px;}'
   ],
   template: `
   <form>

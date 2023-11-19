@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AsyncGuideComponent } from './async-guide/async-guide.component';
 import { CodeExampleModule } from '../custom-elements/code/code-example.module';
-import { TreeModule } from 'angular-tree-component';
+import { TreeModule } from '@talentia/angular-tree-component';
 import { RouterModule } from '@angular/router';
 import { AsyncComponent } from './async-guide/async/async.component';
 import { FilterGuideComponent } from './filter-guide/filter-guide.component';
