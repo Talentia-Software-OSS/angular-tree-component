@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ITreeState } from 'angular-tree-component';
+import { ITreeState } from '@talentia/angular-tree-component';
 
 @Component({
   selector: 'app-state-binding-demo',

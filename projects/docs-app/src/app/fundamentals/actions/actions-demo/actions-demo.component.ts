@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IActionMapping, ITreeOptions, KEYS, TREE_ACTIONS } from 'angular-tree-component';
+import { IActionMapping, ITreeOptions, KEYS, TREE_ACTIONS } from '@talentia/angular-tree-component';
 
 @Component({
   selector: 'app-actions-demo',

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ITreeOptions, TreeNode} from 'angular-tree-component';
+import { ITreeOptions, TreeNode} from '@talentia/angular-tree-component';
 
 @Component({
   selector: 'app-async',

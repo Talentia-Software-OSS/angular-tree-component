@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class ActionsComponent {
 
   actionMapping = `
-import { TREE_ACTIONS, KEYS, IActionMapping } from 'angular-tree-component';
+import { TREE_ACTIONS, KEYS, IActionMapping } from '@talentia/angular-tree-component';
 
 const actionMapping: IActionMapping = {
   mouse: {
@@ -21,7 +21,7 @@ const actionMapping: IActionMapping = {
 `;
 
   mouseActions = `
-import { TREE_ACTIONS, IActionMapping } from 'angular-tree-component';
+import { TREE_ACTIONS, IActionMapping } from '@talentia/angular-tree-component';
 
 actionMapping: IActionMapping = {
   mouse: {
@@ -43,7 +43,7 @@ KEYS = {
 `;
 
   keysExample = `
-import { TREE_ACTIONS, KEYS, IActionMapping } from 'angular-tree-component';
+import { TREE_ACTIONS, KEYS, IActionMapping } from '@talentia/angular-tree-component';
 
 actionMapping:IActionMapping = {
   keys: {
