@@ -1,6 +1,6 @@
 {
   "name": "@talentia/angular-tree-component",
-  "version": "11.0.5",
+  "version": "11.0.6",
   "description": "A simple yet powerful tree component for Angular",
   "license": "MIT",
   "readme": "README.md",
@@ -45,8 +45,8 @@
     "angular2 tree component"
   ],
   "peerDependencies": {
-    "@angular/common": ">=15.0.0",
-    "@angular/core": ">=15.0.0"
+    "@angular/common": "^16.0.0",
+    "@angular/core": "^16.0.0"
   },
   "dependencies": {
     "mobx": "~4.14.1",
