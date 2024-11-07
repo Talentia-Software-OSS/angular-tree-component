@@ -52,13 +52,13 @@
     "@types/rx": "2.5.34",
     "@types/webpack": "^1.12.29",
     "mkdirp": "3.0.1",
-    "ng-packagr": "^17.3.0",
-    "rimraf": "^2.5.1",
-    "rxjs": "~7.8.0",
-    "tslib": "^2.3.0",
-    "typescript": "~5.4.5",
+    "ng-packagr": "17.3.0",
+    "rimraf": "3.0.2",
+    "rxjs": "7.8.1",
+    "tslib": "2.6.2",
+    "typescript": "5.4.5",
     "uuid": "^8.2.0",
-    "zone.js": "~0.14.10"
+    "zone.js": "0.14.10"
   },
   "prettier": {
     "printWidth": 80,
