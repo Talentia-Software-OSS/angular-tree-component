@@ -12,6 +12,7 @@ import { TreeNode } from '../models/tree-node.model';
 import { TreeModel } from '../models/tree.model';
 
 @Component({
+  standalone: false,
   selector: 'tree-node-collection',
   encapsulation: ViewEncapsulation.None,
   template: `
@@ -98,6 +99,7 @@ export class TreeNodeCollectionComponent implements OnInit, OnDestroy {
 }
 
 @Component({
+  standalone: false,
   selector: 'TreeNode, tree-node',
   encapsulation: ViewEncapsulation.None,
   styles: [],
@@ -154,6 +156,7 @@ export class TreeNodeComponent {
 }
 
 @Component({
+  standalone: false,
   selector: 'tree-node-children',
   encapsulation: ViewEncapsulation.None,
   styles: [],

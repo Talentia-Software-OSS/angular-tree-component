@@ -6,6 +6,7 @@ import { ITreeOptions } from '../defs/api';
 import { TreeViewportComponent } from './tree-viewport.component';
 
 @Component({
+  standalone: false,
   selector: 'Tree, tree-root',
   providers: [TreeModel],
   styles: [],

@@ -1,0 +1,87 @@
+
+<nav data-bs-theme="dark" class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/">Home</a>
+        </li>        
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Catalog
+          </a>
+          <ul class="dropdown-menu">
+            <li routerLinkActive="active">
+              <a class="dropdown-item" routerLink="/">Full tree</a>
+            </li>
+            <li routerLinkActive="active">
+              <a class="dropdown-item" routerLink="basic">Basic tree</a>
+            </li>
+            <li routerLinkActive="active">
+              <a class="dropdown-item" routerLink="fields">Fields</a>
+            </li>
+            <li routerLinkActive="active">
+              <a class="dropdown-item" routerLink="templates">Templates</a>
+            </li>
+            <li routerLinkActive="active">
+              <a class="dropdown-item" routerLink="filter">Filter</a>
+            </li>
+            <li routerLinkActive="active">
+              <a class="dropdown-item" routerLink="empty">Empty</a>
+            </li>
+            <li routerLinkActive="active">
+              <a class="dropdown-item" routerLink="rtl">RTL</a>
+            </li>
+            <li routerLinkActive="active">
+              <a class="dropdown-item" routerLink="async">Async</a>
+            </li>
+            <li routerLinkActive="active">
+              <a class="dropdown-item" routerLink="save-restore">Save & Restore</a>
+            </li>
+            <li routerLinkActive="active">
+              <a class="dropdown-item" routerLink="checkboxes">Checkboxes</a>
+            </li>
+            <li routerLinkActive="active">
+              <a class="dropdown-item" routerLink="drag">Drag</a>
+            </li>
+            <li routerLinkActive="active">
+              <a class="dropdown-item" routerLink="dragover-styling">Dragover Styling</a>
+            </li>
+            <li routerLinkActive="active">
+              <a class="dropdown-item" routerLink="dragover-styling-full-tree">Dragover Styling Full Tree</a>
+            </li>
+            <li routerLinkActive="active">
+              <a class="dropdown-item" routerLink="virtual">Virtual</a>
+            </li>
+            <li routerLinkActive="active">
+              <a class="dropdown-item" routerLink="api">API</a>
+            </li>
+            <li routerLinkActive="active">
+              <a class="dropdown-item" routerLink="actions">Actions</a>
+            </li>
+            <li routerLinkActive="active">
+              <a class="dropdown-item" routerLink="scroll-container">Scroll Container</a>
+            </li>
+            <li routerLinkActive="active">
+              <a class="dropdown-item" routerLink="context-menu">Context Menu</a>
+            </li>
+          </ul>          
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/Talentia-Software-OSS/angular-tree-component" target="_blank">Github</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid my-4" style="padding-top: 58px">
+  <router-outlet></router-outlet>
+</div>

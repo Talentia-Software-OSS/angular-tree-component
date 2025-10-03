@@ -9,6 +9,7 @@ import { TreeVirtualScroll } from '../models/tree-virtual-scroll.model';
 import { TREE_EVENTS } from '../constants/events';
 
 @Component({
+  standalone: false,
   selector: 'tree-viewport',
   styles: [],
   providers: [TreeVirtualScroll],

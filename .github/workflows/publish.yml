@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-22.04
     strategy:
       matrix:
-        node-version: [18.19.0]
+        node-version: [20.19.5]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
       - name: Check out repo
@@ -39,7 +39,7 @@ jobs:
         run: npm ci
 
       - name: Run build library
-        run: npm run build:lib --if-present
+        run: npm run build:prod --if-present
     
       - name: Publish package
         run: npm publish ./dist/angular-tree-component

@@ -3,6 +3,7 @@ import { Directive, Input, Renderer2, TemplateRef, ViewContainerRef } from '@ang
 const EASE_ACCELERATION = 1.005;
 
 @Directive({
+  standalone: false,
   selector: '[treeAnimateOpen]'
 })
 export class TreeAnimateOpenDirective {
