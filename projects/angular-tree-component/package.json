@@ -6,10 +6,8 @@
   "licenseFilename": "LICENSE",  
   "peerDependencies": {
     "@angular/common": "^18.0.0",
-    "@angular/core": "^18.0.0"
-  },
-  "dependencies": {
-    "mobx": "4.14.1"
+    "@angular/core": "^18.0.0",
+    "mobx": "~4.14.1"
   },
   "sideEffects": false,
   "author": {

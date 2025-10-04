@@ -3,6 +3,5 @@
   "dest": "../../dist/angular-tree-component",
   "lib": {
     "entryFile": "src/public-api.ts"
-  },
-  "allowedNonPeerDependencies": ["mobx"]
+  }
 }
