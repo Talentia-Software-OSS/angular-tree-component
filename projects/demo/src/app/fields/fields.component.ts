@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ITreeOptions } from '@talentia/angular-tree-component';
 
 @Component({
+  standalone: false,
   selector: 'app-fields',
   template: `
     <h3>Overriding displayField & nodeClass</h3>

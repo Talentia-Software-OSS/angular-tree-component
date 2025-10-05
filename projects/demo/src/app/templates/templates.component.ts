@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ITreeOptions } from '@talentia/angular-tree-component';
 
 @Component({
+  standalone: false,
   selector: 'app-templates',
   template: `
     <h3>treeNodeTemplate and loadingTemplate</h3>

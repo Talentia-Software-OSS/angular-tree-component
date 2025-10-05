@@ -2,6 +2,7 @@ import { Component, HostListener } from '@angular/core';
 import { ITreeOptions, TREE_ACTIONS, TreeNode, TreeModel } from '@talentia/angular-tree-component';
 
 @Component({
+  standalone: false,
   selector: 'app-contextmenu',
   template: `
     <tree-root [focused]="true" [options]="options" [nodes]="nodes">

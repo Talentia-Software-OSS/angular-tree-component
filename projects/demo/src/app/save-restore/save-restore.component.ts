@@ -11,6 +11,7 @@ const getChildren = () => new Promise((resolve) => {
 });
 
 @Component({
+  standalone: false,
   selector: 'app-saverestore',
   template: `
     <input id="filter" #filter (keyup)="tree.treeModel.filterNodes(filter.value)" placeholder="filter nodes"/>

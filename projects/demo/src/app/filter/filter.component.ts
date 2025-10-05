@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { TreeModel, TreeNode } from '@talentia/angular-tree-component';
 
 @Component({
+  standalone: false,
   selector: 'app-filter',
   template: `
     <h2>Filter</h2>

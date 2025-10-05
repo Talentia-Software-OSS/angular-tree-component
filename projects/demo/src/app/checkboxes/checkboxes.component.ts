@@ -2,6 +2,7 @@ import { ITreeOptions } from '@talentia/angular-tree-component';
 import { Component } from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'app-checkboxes',
   template: `
     <h3>tri-state checkboxes</h3>

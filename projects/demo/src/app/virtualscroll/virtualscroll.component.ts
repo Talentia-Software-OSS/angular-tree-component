@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { TreeNode, TreeModel, ITreeOptions } from '@talentia/angular-tree-component';
 
 @Component({
+  standalone: false,
   selector: 'app-virtualscroll',
   styles: [
   ],

@@ -3,6 +3,7 @@ import { ITreeState, ITreeOptions } from '@talentia/angular-tree-component';
 import { v4 } from 'uuid';
 
 @Component({
+  standalone: false,
   selector: 'app-dragover-styling',
   template: `
     <h4>Disabled styling of nodes on dragover</h4>

@@ -32,6 +32,7 @@ const actionMapping: IActionMapping = {
 };
 
 @Component({
+  standalone: false,
   selector: 'app-actions',
   styles: [
   ],

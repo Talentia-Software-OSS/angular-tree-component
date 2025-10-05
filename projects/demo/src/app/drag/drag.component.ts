@@ -3,6 +3,7 @@ import { ITreeState, ITreeOptions } from '@talentia/angular-tree-component';
 import { v4 } from 'uuid';
 
 @Component({
+  standalone: false,
   selector: 'app-drag',
   template: `
     <h4>Allowing to drag only leaf nodes; ctrl-drag to copy</h4>

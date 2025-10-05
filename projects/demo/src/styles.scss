@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../../../node_modules/bootstrap/scss/bootstrap';
+
 .tree-children.tree-children-no-padding { padding-left: 0 }
 .tree-children { padding-left: 20px; overflow: hidden }
 .node-drop-slot { display: block; height: 2px }

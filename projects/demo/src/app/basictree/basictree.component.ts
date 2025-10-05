@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'app-basictree',
   template: `
     <tree-root [focused]="true" [nodes]="nodes"></tree-root>
