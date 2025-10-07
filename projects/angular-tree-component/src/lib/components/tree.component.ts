@@ -6,6 +6,7 @@ import { ITreeOptions } from '../defs/api';
 import { TreeViewportComponent } from './tree-viewport.component';
 
 @Component({
+  standalone: false,
   selector: 'Tree, tree-root',
   providers: [TreeModel],
   styles: [],
@@ -124,7 +125,7 @@ export class TreeComponent implements OnChanges {
 
   private pick(object, keys) {
     return keys.reduce((obj, key) => {
-      if (object && object.hasOwnProperty(key)) {
+      if (object && Object.prototype.hasOwnProperty.call(object, key)) {
         obj[key] = object[key];
       }
       return obj;

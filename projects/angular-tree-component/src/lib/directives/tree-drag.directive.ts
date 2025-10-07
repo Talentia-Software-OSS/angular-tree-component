@@ -4,6 +4,7 @@ import { TreeDraggedElement } from '../models/tree-dragged-element.model';
 const DRAG_OVER_CLASS = 'is-dragging-over';
 
 @Directive({
+  standalone: false,
   selector: '[treeDrag]'
 })
 export class TreeDragDirective implements AfterViewInit, DoCheck, OnDestroy {
@@ -16,7 +17,7 @@ export class TreeDragDirective implements AfterViewInit, DoCheck, OnDestroy {
   }
 
   ngAfterViewInit() {
-    let el: HTMLElement = this.el.nativeElement;
+    const el: HTMLElement = this.el.nativeElement;
     this.ngZone.runOutsideAngular(() => {
       el.addEventListener('drag', this.dragEventHandler);
     });
@@ -27,7 +28,7 @@ export class TreeDragDirective implements AfterViewInit, DoCheck, OnDestroy {
   }
 
   ngOnDestroy() {
-    let el: HTMLElement = this.el.nativeElement;
+    const el: HTMLElement = this.el.nativeElement;
     el.removeEventListener('drag', this.dragEventHandler);
   }
 

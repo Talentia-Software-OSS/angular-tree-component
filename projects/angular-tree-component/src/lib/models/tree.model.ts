@@ -150,7 +150,7 @@ export class TreeModel implements ITreeModel, OnDestroy {
     if (found) { // found in children
       return found;
     } else { // look in children's children
-      for (let child of startNode.children) {
+      for (const child of startNode.children) {
         const foundInChildren = this.getNodeBy(predicate, child);
         if (foundInChildren) return foundInChildren;
       }
@@ -207,7 +207,7 @@ export class TreeModel implements ITreeModel, OnDestroy {
 
   @action update() {
     // Rebuild tree:
-    let virtualRootConfig = {
+    const virtualRootConfig = {
       id: this.options.rootId,
       virtual: true,
       [this.options.childrenField]: this.nodes
@@ -244,36 +244,36 @@ export class TreeModel implements ITreeModel, OnDestroy {
   }
 
   @action focusNextNode() {
-    let previousNode = this.getFocusedNode();
-    let nextNode = previousNode ? previousNode.findNextNode(true, true) : this.getFirstRoot(true);
+    const previousNode = this.getFocusedNode();
+    const nextNode = previousNode ? previousNode.findNextNode(true, true) : this.getFirstRoot(true);
     if (nextNode) nextNode.focus();
   }
 
   @action focusPreviousNode() {
-    let previousNode = this.getFocusedNode();
-    let nextNode = previousNode ? previousNode.findPreviousNode(true) : this.getLastRoot(true);
+    const previousNode = this.getFocusedNode();
+    const nextNode = previousNode ? previousNode.findPreviousNode(true) : this.getLastRoot(true);
     if (nextNode) nextNode.focus();
   }
 
   @action focusDrillDown() {
-    let previousNode = this.getFocusedNode();
+    const previousNode = this.getFocusedNode();
     if (previousNode && previousNode.isCollapsed && previousNode.hasChildren) {
       previousNode.toggleExpanded();
     }
     else {
-      let nextNode = previousNode ? previousNode.getFirstChild(true) : this.getFirstRoot(true);
+      const nextNode = previousNode ? previousNode.getFirstChild(true) : this.getFirstRoot(true);
       if (nextNode) nextNode.focus();
     }
   }
 
   @action focusDrillUp() {
-    let previousNode = this.getFocusedNode();
+    const previousNode = this.getFocusedNode();
     if (!previousNode) return;
     if (previousNode.isExpanded) {
       previousNode.toggleExpanded();
     }
     else {
-      let nextNode = previousNode.realParent;
+      const nextNode = previousNode.realParent;
       if (nextNode) nextNode.focus();
     }
   }
@@ -389,7 +389,7 @@ export class TreeModel implements ITreeModel, OnDestroy {
     const originalNode = fromChildren.splice(fromIndex, 1)[0];
 
     // Compensate for index if already removed from parent:
-    let toIndex = (fromParent === to.parent && to.index > fromIndex) ? to.index - 1 : to.index;
+    const toIndex = (fromParent === to.parent && to.index > fromIndex) ? to.index - 1 : to.index;
 
     toChildren.splice(toIndex, 0, originalNode);
 

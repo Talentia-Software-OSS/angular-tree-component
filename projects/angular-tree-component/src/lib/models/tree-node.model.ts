@@ -118,13 +118,13 @@ export class TreeNode implements ITreeNode {
   }
 
   getFirstChild(skipHidden = false) {
-    let children = skipHidden ? this.visibleChildren : this.children;
+    const children = skipHidden ? this.visibleChildren : this.children;
 
     return children != null && children.length ? children[0] : null;
   }
 
   getLastChild(skipHidden = false) {
-    let children = skipHidden ? this.visibleChildren : this.children;
+    const children = skipHidden ? this.visibleChildren : this.children;
 
     return children != null && children.length ? children[children.length - 1] : null;
   }
@@ -136,7 +136,7 @@ export class TreeNode implements ITreeNode {
   }
 
   findPreviousNode(skipHidden = false) {
-    let previousSibling = this.findPreviousSibling(skipHidden);
+    const previousSibling = this.findPreviousSibling(skipHidden);
     if (!previousSibling) {
       return this.realParent;
     }
@@ -348,7 +348,7 @@ export class TreeNode implements ITreeNode {
   }
 
   focus(scroll = true) {
-    let previousNode = this.treeModel.getFocusedNode();
+    const previousNode = this.treeModel.getFocusedNode();
     this.treeModel.setFocusedNode(this);
     if (scroll) {
       this.scrollIntoView();
@@ -362,7 +362,7 @@ export class TreeNode implements ITreeNode {
   }
 
   blur() {
-    let previousNode = this.treeModel.getFocusedNode();
+    const previousNode = this.treeModel.getFocusedNode();
     this.treeModel.setFocusedNode(null);
     if (previousNode) {
       this.fireEvent({ eventName: TREE_EVENTS.blur, node: this });
