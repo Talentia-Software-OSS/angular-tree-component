@@ -21,10 +21,9 @@ import { TreeNode, TreeModel, TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions }
 export class ScrollContainerComponent implements OnInit {
   nodes: any[] = [];
   options: ITreeOptions = {
-    scrollContainer: <HTMLElement>document.body.parentElement
+    scrollContainer: document.body.parentElement as HTMLElement
   };
-  constructor() {
-  }
+
   ngOnInit() {
     for (let i = 0; i < 200; i++) {
       this.nodes.push({

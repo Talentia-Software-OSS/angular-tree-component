@@ -23,6 +23,16 @@
             }
           },
           "defaultConfiguration": "production"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/angular-tree-component/**/*.ts",
+              "projects/angular-tree-component/**/*.html"
+            ],
+            "eslintConfig": "projects/angular-tree-component/eslint.config.js"
+          }
         }
       }
     },
@@ -89,7 +99,17 @@
             }
           },
           "defaultConfiguration": "development"
-        }        
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/demo/**/*.ts",
+              "projects/demo/**/*.html"
+            ],
+            "eslintConfig": "projects/demo/eslint.config.js"
+          }
+        }
       }
     }
   }

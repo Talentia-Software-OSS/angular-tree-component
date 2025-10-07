@@ -49,7 +49,7 @@ export class TreeDropDirective implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
-    let el: HTMLElement = this.el.nativeElement;
+    const el: HTMLElement = this.el.nativeElement;
     this.ngZone.runOutsideAngular(() => {
       el.addEventListener('dragover', this.dragOverEventHandler);
       el.addEventListener('dragenter', this.dragEnterEventHandler);
@@ -58,7 +58,7 @@ export class TreeDropDirective implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    let el: HTMLElement = this.el.nativeElement;
+    const el: HTMLElement = this.el.nativeElement;
     el.removeEventListener('dragover', this.dragOverEventHandler);
     el.removeEventListener('dragenter', this.dragEnterEventHandler);
     el.removeEventListener('dragleave', this.dragLeaveEventHandler);
