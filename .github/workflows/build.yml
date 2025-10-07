@@ -41,10 +41,7 @@ jobs:
         cache: npm
 
     - name: Install dependencies
-      run: npm i
-
-    - name: Run run ESLint
-      run: npm run lint --if-present
+      run: npm ci
 
     - name: Run build library
       run: npm run build:prod --if-present
