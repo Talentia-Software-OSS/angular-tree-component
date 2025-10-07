@@ -9,6 +9,7 @@ import { TreeVirtualScroll } from '../models/tree-virtual-scroll.model';
 import { TREE_EVENTS } from '../constants/events';
 
 @Component({
+  standalone: false,
   selector: 'tree-viewport',
   styles: [],
   providers: [TreeVirtualScroll],
@@ -43,13 +44,13 @@ export class TreeViewportComponent implements AfterViewInit, OnInit, OnDestroy {
       this.setViewport();
       this.virtualScroll.fireEvent({ eventName: TREE_EVENTS.initialized });
     });
-    let el: HTMLElement = this.elementRef.nativeElement;
+    const el: HTMLElement = this.elementRef.nativeElement;
     el.addEventListener('scroll', this.scrollEventHandler);
   }
 
   ngOnDestroy() {
     this.virtualScroll.clear();
-    let el: HTMLElement = this.elementRef.nativeElement;
+    const el: HTMLElement = this.elementRef.nativeElement;
     el.removeEventListener('scroll', this.scrollEventHandler);
   }
 
@@ -64,7 +65,7 @@ export class TreeViewportComponent implements AfterViewInit, OnInit, OnDestroy {
   private throttle(func, timeFrame) {
     let lastTime = 0;
     return function () {
-      let now = Date.now();
+      const now = Date.now();
       if (now - lastTime >= timeFrame) {
         func();
         lastTime = now;

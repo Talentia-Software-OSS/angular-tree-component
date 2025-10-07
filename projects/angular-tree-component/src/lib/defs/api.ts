@@ -2,24 +2,18 @@
  * Welcome to ng2tree
  */
 export type IDType = string | number;
-export type IDTypeDictionary = { [id: string]: boolean, [id: number]: boolean };
+export interface IDTypeDictionary { [id: string]: boolean, [id: number]: boolean }
 
 /**
  * See ITreeNode for documentation
  */
 export declare type TreeNode = any;
 
-export interface IAllowDropFn {
-  (element: any, to: {parent: TreeNode, index: number}, $event?: any): boolean;
-}
+export type IAllowDropFn = (element: any, to: {parent: TreeNode, index: number}, $event?: any) => boolean;
 
-export interface INodeHeightFn {
-  (node: TreeNode): number;
-}
+export type INodeHeightFn = (node: TreeNode) => number;
 
-export interface IAllowDragFn {
-  (node: TreeNode): boolean;
-}
+export type IAllowDragFn = (node: TreeNode) => boolean;
 
 
 export interface ITreeState {

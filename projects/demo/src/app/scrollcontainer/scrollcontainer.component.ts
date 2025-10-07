@@ -1,0 +1,36 @@
+import { Component, Input, OnInit } from '@angular/core';
+import { TreeNode, TreeModel, TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions } from '@talentia/angular-tree-component';
+
+@Component({
+  standalone: false,
+  selector: 'app-scrollcontainer',
+  styles: [
+  ],
+  template: `
+  <div style="height: 300px; width: 200px;border: 1px solid grey">Padding</div>
+  <div>
+    <tree-root
+      #tree
+      [nodes]="nodes"
+      [options]="options"
+      [focused]="true"
+    ></tree-root>
+  </div>
+  `
+})
+export class ScrollContainerComponent implements OnInit {
+  nodes: any[] = [];
+  options: ITreeOptions = {
+    scrollContainer: document.body.parentElement as HTMLElement
+  };
+
+  ngOnInit() {
+    for (let i = 0; i < 200; i++) {
+      this.nodes.push({
+        name: `rootDynamic${i}`,
+        subTitle: `root created dynamically ${i}`
+      });
+    }
+  }
+
+}

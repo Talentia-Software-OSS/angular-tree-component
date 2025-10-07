@@ -69,9 +69,7 @@ export interface IActionMapping {
     mouseOver?: IActionHandler,
     mouseOut?: IActionHandler
   };
-  keys?: {
-    [key: number]: IActionHandler
-  };
+  keys?: Record<number, IActionHandler>;
 }
 
 export class TreeOptions {
@@ -131,8 +129,8 @@ export class TreeOptions {
     }
 
     if (options.rtl) {
-      this.actionMapping.keys[KEYS.RIGHT] = <IActionHandler>options.actionMapping?.keys[KEYS.RIGHT] || TREE_ACTIONS.DRILL_UP;
-      this.actionMapping.keys[KEYS.LEFT] = <IActionHandler>options.actionMapping?.keys[KEYS.LEFT] || TREE_ACTIONS.DRILL_DOWN;
+      this.actionMapping.keys[KEYS.RIGHT] = options.actionMapping?.keys[KEYS.RIGHT] as IActionHandler || TREE_ACTIONS.DRILL_UP;
+      this.actionMapping.keys[KEYS.LEFT] = options.actionMapping?.keys[KEYS.LEFT] as IActionHandler || TREE_ACTIONS.DRILL_DOWN;
     }
   }
 

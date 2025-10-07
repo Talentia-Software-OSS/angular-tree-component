@@ -16,6 +16,7 @@ const DRAG_OVER_CLASS = 'is-dragging-over';
 const DRAG_DISABLED_CLASS = 'is-dragging-over-disabled';
 
 @Directive({
+  standalone: false,
   selector: '[treeDrop]'
 })
 export class TreeDropDirective implements AfterViewInit, OnDestroy {
@@ -48,7 +49,7 @@ export class TreeDropDirective implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
-    let el: HTMLElement = this.el.nativeElement;
+    const el: HTMLElement = this.el.nativeElement;
     this.ngZone.runOutsideAngular(() => {
       el.addEventListener('dragover', this.dragOverEventHandler);
       el.addEventListener('dragenter', this.dragEnterEventHandler);
@@ -57,7 +58,7 @@ export class TreeDropDirective implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    let el: HTMLElement = this.el.nativeElement;
+    const el: HTMLElement = this.el.nativeElement;
     el.removeEventListener('dragover', this.dragOverEventHandler);
     el.removeEventListener('dragenter', this.dragEnterEventHandler);
     el.removeEventListener('dragleave', this.dragLeaveEventHandler);
