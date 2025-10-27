@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
+import { TreeModule } from '@talentia/angular-tree-component';
 
 @Component({
-  standalone: false,
-  selector: 'app-basictree',
-  template: `
+    selector: 'app-basictree',
+    template: `
     <tree-root [focused]="true" [nodes]="nodes"></tree-root>
     <br>
     <p>Keys:</p>
     down | up | left | right | space | enter
   `,
-  styles: []
+    imports: [TreeModule]
 })
 export class BasicTreeComponent {
   nodes = [

@@ -1,10 +1,9 @@
-import { ITreeOptions } from '@talentia/angular-tree-component';
+import { ITreeOptions, TreeModule } from '@talentia/angular-tree-component';
 import { Component } from '@angular/core';
 
 @Component({
-  standalone: false,
-  selector: 'app-checkboxes',
-  template: `
+    selector: 'app-checkboxes',
+    template: `
     <h3>tri-state checkboxes</h3>
     <tree-root
       id="tree1"
@@ -26,8 +25,7 @@ import { Component } from '@angular/core';
       [options]="optionsDisabled">
     </tree-root>
   `,
-  styles: [
-  ]
+    imports: [TreeModule]
 })
 export class CheckboxesComponent {
   nodes = [

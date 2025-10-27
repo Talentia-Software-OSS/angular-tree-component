@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
+import { TreeModule } from '@talentia/angular-tree-component';
 
 @Component({
-  standalone: false,
-  selector: 'app-empty',
-  template: `
+    selector: 'app-empty',
+    template: `
     <tree-root #tree1 id="tree1" [focused]="true" [nodes]="nodes"></tree-root>
     <tree-root #tree2 id="tree2" [focused]="true" [nodes]="nodes2"></tree-root>
     <button (click)="loadNodes()">loadNodes 1</button>
   `,
-  styles: []
+    imports: [TreeModule]
 })
 export class EmptyComponent {
   nodes: any[] = [];

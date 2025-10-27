@@ -5,7 +5,6 @@ import { TreeNode } from '../models/tree-node.model';
   standalone: false,
   selector: 'tree-node-checkbox',
   encapsulation: ViewEncapsulation.None,
-  styles: [],
   template: `
     <ng-container *treeMobxAutorun="{ dontDetach: true }">
       <input

@@ -1,12 +1,9 @@
-import { Component, Input } from '@angular/core';
-import { TreeNode, TreeModel, ITreeOptions } from '@talentia/angular-tree-component';
+import { Component } from '@angular/core';
+import { ITreeOptions, TreeModule } from '@talentia/angular-tree-component';
 
 @Component({
-  standalone: false,
-  selector: 'app-api',
-  styles: [
-  ],
-  template: `
+    selector: 'app-api',
+    template: `
   <tree-root
     #tree
     [nodes]="nodes"
@@ -56,7 +53,8 @@ import { TreeNode, TreeModel, ITreeOptions } from '@talentia/angular-tree-compon
     (click)="activeNodes(tree.treeModel)">
     getActiveNodes()
   </button>
-  `
+  `,
+    imports: [TreeModule]
 })
 export class ApiComponent {
   options: ITreeOptions = {

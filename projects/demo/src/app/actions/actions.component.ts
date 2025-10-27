@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { TreeNode, TreeModel, TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions } from '@talentia/angular-tree-component';
+import { Component } from '@angular/core';
+import { TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions, TreeModule } from '@talentia/angular-tree-component';
 
 const actionMapping: IActionMapping = {
   mouse: {
@@ -32,11 +32,8 @@ const actionMapping: IActionMapping = {
 };
 
 @Component({
-  standalone: false,
-  selector: 'app-actions',
-  styles: [
-  ],
-  template: `
+    selector: 'app-actions',
+    template: `
     <tree-root
       #tree
       [nodes]="nodes"
@@ -52,7 +49,8 @@ const actionMapping: IActionMapping = {
     shift+click - select multi<br>
     double click - expand / collapse<br>
     right-click - show alert
-  `
+  `,
+    imports: [TreeModule]
 })
 export class ActionsComponent {
   nodes = [
