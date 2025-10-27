@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
-import { ITreeState, ITreeOptions } from '@talentia/angular-tree-component';
+import { ITreeState, ITreeOptions, TreeModule } from '@talentia/angular-tree-component';
 import { v4 } from 'uuid';
 
 @Component({
-  standalone: false,
-  selector: 'app-drag',
-  template: `
+    selector: 'app-drag',
+    template: `
     <h4>Allowing to drag only leaf nodes; ctrl-drag to copy</h4>
     <tree-root [state]="state" [options]="options" [focused]="true" [nodes]="nodes"></tree-root>
   `,
-  styles: []
+    imports: [TreeModule]
 })
 export class DragComponent {
   state: ITreeState = {

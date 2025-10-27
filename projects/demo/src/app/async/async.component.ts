@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import { ITreeOptions, TreeNode} from '@talentia/angular-tree-component';
+import { ITreeOptions, TreeModule } from '@talentia/angular-tree-component';
 
 @Component({
-  standalone: false,
-  selector: 'app-async',
-  template: `
+    selector: 'app-async',
+    template: `
     <tree-root #tree [options]="options" [nodes]="nodes"></tree-root>
- `,
-  styles: []
+  `,
+    imports: [TreeModule]
 })
 export class AsyncTreeComponent {
   options: ITreeOptions = {

@@ -1,12 +1,9 @@
-import { Component, Input } from '@angular/core';
-import { TreeNode, TreeModel, ITreeOptions } from '@talentia/angular-tree-component';
+import { Component } from '@angular/core';
+import { ITreeOptions, TreeModule } from '@talentia/angular-tree-component';
 
 @Component({
-  standalone: false,
-  selector: 'app-virtualscroll',
-  styles: [
-  ],
-  template: `
+    selector: 'app-virtualscroll',
+    template: `
   <div style="height: 800px; width: 500px; overflow: hidden;">
 
     <tree-root
@@ -17,7 +14,8 @@ import { TreeNode, TreeModel, ITreeOptions } from '@talentia/angular-tree-compon
     >
     </tree-root>
   </div>
-  `
+  `,
+    imports: [TreeModule]
 })
 export class VirtualscrollComponent {
   nodes: any[];

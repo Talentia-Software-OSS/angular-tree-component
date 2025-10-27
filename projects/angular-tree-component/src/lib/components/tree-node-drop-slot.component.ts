@@ -5,7 +5,6 @@ import { TreeNode } from '../models/tree-node.model';
   standalone: false,
   selector: 'TreeNodeDropSlot, tree-node-drop-slot',
   encapsulation: ViewEncapsulation.None,
-  styles: [],
   template: `
     <div
       class="node-drop-slot"

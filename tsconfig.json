@@ -28,7 +28,6 @@
     "noImplicitAny": false,
     "strictNullChecks": false,
     "strictPropertyInitialization": false,
-    "allowSyntheticDefaultImports": true,
     "inlineSourceMap": true,
     "stripInternal": true,
     "useDefineForClassFields": false,

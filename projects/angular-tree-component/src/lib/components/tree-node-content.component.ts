@@ -6,11 +6,14 @@ import { TreeNode } from '../models/tree-node.model';
   selector: 'tree-node-content',
   encapsulation: ViewEncapsulation.None,
   template: `
-  <span *ngIf="!template">{{ node.displayField }}</span>
+  @if (!template) {
+    <span>{{ node.displayField }}</span>
+  }
   <ng-container
     [ngTemplateOutlet]="template"
     [ngTemplateOutletContext]="{ $implicit: node, node: node, index: index }">
-  </ng-container>`,
+  </ng-container>
+  `,
 })
 export class TreeNodeContentComponent {
   @Input() node: TreeNode;
