@@ -1,13 +1,13 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { TreeModule } from '@talentia/angular-tree-component';
 
 @Component({
-  standalone: false,
-  selector: 'app-basictree',
-  template: `
+    selector: 'app-basictree',
+    template: `
     <tree-root [focused]="true" [nodes]="nodes" [options]="options"></tree-root>
   `,
-  encapsulation: ViewEncapsulation.None,
-  styles: []
+    encapsulation: ViewEncapsulation.None,
+    imports: [TreeModule]
 })
 export class RtlTreeComponent {
   options = {

@@ -1,0 +1,41 @@
+.header.sticky {
+  position: sticky;
+  top: 0;
+  background: purple;
+  height: 110px;
+  z-index: 2;
+}
+
+.header.title {
+  text-align: center;
+  color: white;
+  margin: 0;
+  line-height: 50px;
+}
+
+.header.description {
+  text-align: center;
+  color: white;
+  line-height: 25px;
+}
+
+.header.info {
+  color: white;
+  text-align: center;
+}
+
+.header.info.debug {
+  line-height: 35px;
+}
+
+section {
+  font-size: 0.875rem;
+  display: flex;
+  flex-direction: row;
+}
+
+section article {
+  flex: 1;
+  display: flex;
+  margin: 10px;
+}

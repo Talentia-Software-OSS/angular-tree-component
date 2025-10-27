@@ -1,12 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { TreeNode, TreeModel, TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions } from '@talentia/angular-tree-component';
+import { Component, OnInit } from '@angular/core';
+import { ITreeOptions, TreeModule } from '@talentia/angular-tree-component';
 
 @Component({
-  standalone: false,
-  selector: 'app-scrollcontainer',
-  styles: [
-  ],
-  template: `
+    selector: 'app-scrollcontainer',
+    template: `
   <div style="height: 300px; width: 200px;border: 1px solid grey">Padding</div>
   <div>
     <tree-root
@@ -16,7 +13,8 @@ import { TreeNode, TreeModel, TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions }
       [focused]="true"
     ></tree-root>
   </div>
-  `
+  `,
+    imports: [TreeModule]
 })
 export class ScrollContainerComponent implements OnInit {
   nodes: any[] = [];

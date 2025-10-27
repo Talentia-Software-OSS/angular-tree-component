@@ -9,31 +9,32 @@ import { TreeViewportComponent } from './tree-viewport.component';
   standalone: false,
   selector: 'Tree, tree-root',
   providers: [TreeModel],
-  styles: [],
   template: `
       <tree-viewport #viewport>
-          <div
-                  class="angular-tree-component"
-                  [class.node-dragging]="treeDraggedElement.isDragging()"
-                  [class.angular-tree-component-rtl]="treeModel.options.rtl">
-              <tree-node-collection
-                      *ngIf="treeModel.roots"
-                      [nodes]="treeModel.roots"
-                      [treeModel]="treeModel"
+        <div
+          class="angular-tree-component"
+          [class.node-dragging]="treeDraggedElement.isDragging()"
+          [class.angular-tree-component-rtl]="treeModel.options.rtl">
+          @if (treeModel.roots) {
+            <tree-node-collection
+              [nodes]="treeModel.roots"
+              [treeModel]="treeModel"
                       [templates]="{
             loadingTemplate: loadingTemplate,
             treeNodeTemplate: treeNodeTemplate,
             treeNodeWrapperTemplate: treeNodeWrapperTemplate,
             treeNodeFullTemplate: treeNodeFullTemplate
           }">
-              </tree-node-collection>
-              <tree-node-drop-slot
-                      class="empty-tree-drop-slot"
-                      *ngIf="treeModel.isEmptyTree()"
-                      [dropIndex]="0"
-                      [node]="treeModel.virtualRoot">
-              </tree-node-drop-slot>
-          </div>
+            </tree-node-collection>
+          }
+          @if (treeModel.isEmptyTree()) {
+            <tree-node-drop-slot
+              class="empty-tree-drop-slot"
+              [dropIndex]="0"
+              [node]="treeModel.virtualRoot">
+            </tree-node-drop-slot>
+          }
+        </div>
       </tree-viewport>
   `
 })

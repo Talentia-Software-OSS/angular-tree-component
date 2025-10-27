@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { ITreeState, ITreeOptions } from '@talentia/angular-tree-component';
+import { ITreeState, ITreeOptions, TreeModule } from '@talentia/angular-tree-component';
 import { v4 } from 'uuid';
 
 @Component({
-  standalone: false,
-  selector: 'app-dragover-styling',
-  template: `
+    selector: 'app-dragover-styling',
+    template: `
     <h4>Disabled styling of nodes on dragover</h4>
     <tree-root
       [state]="state"
@@ -14,7 +13,7 @@ import { v4 } from 'uuid';
       [nodes]="nodes"
     ></tree-root>
   `,
-  styles: []
+    imports: [TreeModule]
 })
 export class DragOverStylingComponent {
   state: ITreeState = {

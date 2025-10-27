@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  TreeNode,
-  TreeModel,
-  TREE_ACTIONS,
-  KEYS,
-  IActionMapping,
-  ITreeOptions
-} from '@talentia/angular-tree-component';
+import { TreeNode, TreeModel, TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions, TreeModule } from '@talentia/angular-tree-component';
+import { FormsModule } from '@angular/forms';
 
 const actionMapping: IActionMapping = {
   mouse: {
@@ -31,12 +25,11 @@ const actionMapping: IActionMapping = {
 };
 
 @Component({
-  standalone: false,
-  selector: 'app-dragover-styling-fulltree',
-  styles: [
-  'button {line-height: 24px;box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);border: none;border-radius: 2px;background: #a3d9f5;cursor: pointer;margin: 0 3px;}'
-  ],
-  template: `
+    selector: 'app-dragover-styling-fulltree',
+    styles: [
+        'button {line-height: 24px;box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);border: none;border-radius: 2px;background: #a3d9f5;cursor: pointer;margin: 0 3px;}'
+    ],
+    template: `
     <form>
       <input
         #filter
@@ -100,7 +93,8 @@ const actionMapping: IActionMapping = {
     <button (click)="tree.treeModel.expandAll()">Expand All</button>
     <button (click)="tree.treeModel.collapseAll()">Collapse All</button>
     <button (click)="activeNodes(tree.treeModel)">getActiveNodes()</button>
-  `
+  `,
+    imports: [FormsModule, TreeModule]
 })
 export class DragOverStylingFullTreeComponent implements OnInit {
   nodes: any[];
