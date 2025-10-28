@@ -41,7 +41,7 @@ const actionMapping: IActionMapping = {
   <form>
     <input #filter (keyup)="filterNodes(filter.value, tree)" placeholder="filter nodes"/>
   </form>
-  <div style="height: 280px; width: 400px; overflow: hidden;">
+  <div style="height: 250px; overflow: hidden;">
 
     <tree-root
       #tree
