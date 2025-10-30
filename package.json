@@ -1,6 +1,6 @@
 {
   "name": "angular-tree-component",
-  "version": "11.0.10",
+  "version": "11.0.11",
   "scripts": {
     "ng": "ng",
     "build": "npm-run-all -s clean:build build:prod",
@@ -39,8 +39,8 @@
     "zone.js": "0.15.1"
   },
   "devDependencies": {
-    "@angular/build": "19.2.18",
-    "@angular/cli": "19.2.18",
+    "@angular/build": "19.2.19",
+    "@angular/cli": "19.2.19",
     "@angular/compiler-cli": "19.2.15",
     "angular-eslint": "19.8.1",
     "eslint": "9.15.0",
