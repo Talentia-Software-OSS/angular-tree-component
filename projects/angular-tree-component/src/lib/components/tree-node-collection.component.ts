@@ -18,7 +18,7 @@ import { TreeModel } from '../models/tree.model';
   template: `
     <ng-container *treeMobxAutorun="{ dontDetach: true }">
       <div [style.margin-top]="marginTop">
-        @for (node of viewportNodes; track trackNode(i, node); let i = $index) {
+        @for (node of viewportNodes; track node.id; let i = $index) {
           <tree-node
             [node]="node"
             [index]="i"
@@ -92,10 +92,6 @@ export class TreeNodeCollectionComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this._dispose.forEach(d => d());
-  }
-
-  trackNode(index, node) {
-    return node.id;
   }
 }
 
