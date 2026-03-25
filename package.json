@@ -16,7 +16,7 @@
     "clean:modules": "rimraf node_modules",
     "clean:all": "npm-run-all -p clean:build clean:modules",
     "create:dir": "mkdirp ./dist/angular-tree-component/css/",
-    "copy:file": "copyfiles ./projects/angular-tree-component/src/lib/angular-tree-component.css ./dist/angular-tree-component/css/",
+    "copy:file": "copyfiles -f ./projects/angular-tree-component/src/lib/angular-tree-component.css ./dist/angular-tree-component/css",
     "lint": "ng lint",
     "lint:lib": "ng lint @talentia/angular-tree-component",
     "lint:app": "ng lint demo",
