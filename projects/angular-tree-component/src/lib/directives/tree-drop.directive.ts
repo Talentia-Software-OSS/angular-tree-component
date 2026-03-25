@@ -4,6 +4,7 @@ import {
   ElementRef,
   EventEmitter,
   HostListener,
+  inject,
   Input,
   NgZone,
   OnDestroy,
@@ -25,11 +26,17 @@ export class TreeDropDirective implements AfterViewInit, OnDestroy {
   @Output('treeDropDragOver') onDragOverCallback = new EventEmitter();
   @Output('treeDropDragLeave') onDragLeaveCallback = new EventEmitter();
   @Output('treeDropDragEnter') onDragEnterCallback = new EventEmitter();
+
   private readonly dragOverEventHandler: (ev: DragEvent) => void;
   private readonly dragEnterEventHandler: (ev: DragEvent) => void;
   private readonly dragLeaveEventHandler: (ev: DragEvent) => void;
 
   private _allowDrop = (element, $event) => true;
+
+  private el: ElementRef;
+  private renderer: Renderer2;
+  private treeDraggedElement: TreeDraggedElement;
+  private ngZone: NgZone;
 
   @Input() set treeAllowDrop(allowDrop) {
     if (allowDrop instanceof Function) {
@@ -42,7 +49,12 @@ export class TreeDropDirective implements AfterViewInit, OnDestroy {
     return this._allowDrop(this.treeDraggedElement.get(), $event);
   }
 
-  constructor(private el: ElementRef, private renderer: Renderer2, private treeDraggedElement: TreeDraggedElement, private ngZone: NgZone) {
+  constructor() {
+    this.el = inject(ElementRef);
+    this.renderer = inject(Renderer2);
+    this.treeDraggedElement = inject(TreeDraggedElement);
+    this.ngZone = inject(NgZone);
+
     this.dragOverEventHandler = this.onDragOver.bind(this);
     this.dragEnterEventHandler = this.onDragEnter.bind(this);
     this.dragLeaveEventHandler = this.onDragLeave.bind(this);

@@ -4,6 +4,7 @@ import {
   AfterViewInit,
   OnInit,
   OnDestroy,
+  inject,
 } from '@angular/core';
 import { TreeVirtualScroll } from '../models/tree-virtual-scroll.model';
 import { TREE_EVENTS } from '../constants/events';
@@ -26,11 +27,12 @@ export class TreeViewportComponent implements AfterViewInit, OnInit, OnDestroy {
   }, 17);
 
   private readonly scrollEventHandler: ($event: Event) => void;
+  private elementRef: ElementRef;
+  public virtualScroll: TreeVirtualScroll;
 
-  constructor(
-    private elementRef: ElementRef,
-    public virtualScroll: TreeVirtualScroll
-  ) {
+  constructor() {
+    this.elementRef = inject(ElementRef);
+    this.virtualScroll = inject(TreeVirtualScroll);
     this.scrollEventHandler = this.setViewport.bind(this);
   }
 
