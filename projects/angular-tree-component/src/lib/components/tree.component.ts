@@ -1,4 +1,4 @@
-import { Component, ContentChild, EventEmitter, HostListener, Input, OnChanges, Output, TemplateRef, ViewChild } from '@angular/core';
+import { Component, ContentChild, EventEmitter, HostListener, inject, Input, OnChanges, Output, TemplateRef, ViewChild } from '@angular/core';
 import { TreeModel } from '../models/tree.model';
 import { TreeDraggedElement } from '../models/tree-dragged-element.model';
 import { TreeOptions } from '../models/tree-options.model';
@@ -81,12 +81,14 @@ export class TreeComponent implements OnChanges {
   @Output() event;
   @Output() stateChange;
 
-  constructor(
-    public treeModel: TreeModel,
-    public treeDraggedElement: TreeDraggedElement) {
+  public treeModel: TreeModel;
+  public treeDraggedElement: TreeDraggedElement;
 
-    treeModel.eventNames.forEach((name) => this[name] = new EventEmitter());
-    treeModel.subscribeToState((state) => this.stateChange.emit(state));
+  constructor() {
+    this.treeModel = inject(TreeModel);
+    this.treeDraggedElement = inject(TreeDraggedElement);
+    this.treeModel.eventNames.forEach((name) => this[name] = new EventEmitter());
+    this.treeModel.subscribeToState((state) => this.stateChange.emit(state));
   }
 
   @HostListener('body: keydown', ['$event'])

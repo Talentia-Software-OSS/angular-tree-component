@@ -1,4 +1,4 @@
-import { Directive, Input, Renderer2, TemplateRef, ViewContainerRef } from '@angular/core';
+import { Directive, inject, Input, Renderer2, TemplateRef, ViewContainerRef } from '@angular/core';
 
 const EASE_ACCELERATION = 1.005;
 
@@ -27,11 +27,14 @@ export class TreeAnimateOpenDirective {
   };
 
   private innerElement: any;
+  private renderer: Renderer2;
+  private templateRef: TemplateRef<any>;
+  private viewContainerRef: ViewContainerRef;
 
-  constructor(
-    private renderer: Renderer2,
-    private templateRef: TemplateRef<any>,
-    private viewContainerRef: ViewContainerRef) {
+  constructor() {
+    this.renderer = inject(Renderer2);
+    this.templateRef = inject(TemplateRef<any>);
+    this.viewContainerRef = inject(ViewContainerRef);
   }
 
   private _show() {

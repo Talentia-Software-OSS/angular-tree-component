@@ -1,4 +1,4 @@
-import { AfterViewInit, Directive, DoCheck, ElementRef, HostListener, Input, NgZone, OnDestroy, Renderer2 } from '@angular/core';
+import { AfterViewInit, Directive, DoCheck, ElementRef, HostListener, inject, Input, NgZone, OnDestroy, Renderer2 } from '@angular/core';
 import { TreeDraggedElement } from '../models/tree-dragged-element.model';
 
 const DRAG_OVER_CLASS = 'is-dragging-over';
@@ -10,9 +10,19 @@ const DRAG_OVER_CLASS = 'is-dragging-over';
 export class TreeDragDirective implements AfterViewInit, DoCheck, OnDestroy {
   @Input('treeDrag') draggedElement;
   @Input() treeDragEnabled;
-  private readonly dragEventHandler: (ev: DragEvent) => void;
 
-  constructor(private el: ElementRef, private renderer: Renderer2, private treeDraggedElement: TreeDraggedElement, private ngZone: NgZone) {
+  private readonly dragEventHandler: (ev: DragEvent) => void;
+  private el: ElementRef;
+  private renderer: Renderer2;
+  private treeDraggedElement: TreeDraggedElement;
+  private ngZone: NgZone;
+
+  constructor() {
+    this.el = inject(ElementRef);
+    this.renderer = inject(Renderer2);
+    this.treeDraggedElement = inject(TreeDraggedElement);
+    this.ngZone = inject(NgZone);
+
     this.dragEventHandler = this.onDrag.bind(this);
   }
 
