@@ -2,16 +2,30 @@
 
 A simple yet powerful tree component for Angular
 
+## Compatibility
+
+| @talentia/angular-tree-component | Angular |
+| -------------------------------- | ------- |
+| 11.0.13                          | 21.x    |
+| 11.0.12                          | 20.x    |
+| 11.0.10 - 11.0.11                | 19.x    |
+| 11.0.9                           | 18.x    |
+| 11.0.8                           | 17.x    |
+| 11.0.6 - 11.0.7                  | 16.x    |
+| 11.0.5                           | 15.x    |
+
 ## Getting started
 
-Install `angular-tree-component`:
+Install `@talentia/angular-tree-component` and its peer dependency `mobx` (4.14.x):
 
-```npm install @talentia/angular-tree-component```
+```bash
+npm install @talentia/angular-tree-component mobx@~4.14.1
+```
 
 Import `TreeModule`:
 
-```
-import { TreeModule } from '@circlon/angular-tree-component';
+```ts
+import { TreeModule } from '@talentia/angular-tree-component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,10 +35,12 @@ import { TreeModule } from '@circlon/angular-tree-component';
 export class AppModule {}
 ```
 
-Add css to `styles.scss` or include in `angular.json`:
+Add the css to the `styles` of your project in `angular.json`:
 
-```
-@import '~@circlon/angular-tree-component/css/angular-tree-component.css';
+```json
+"styles": [
+  "node_modules/@talentia/angular-tree-component/css/angular-tree-component.css"
+]
 ```
 
 ## Docs, Demos & More
@@ -40,23 +56,14 @@ The API Reference is still in our old documentation for now:
 
 [Slack Community](https://angular-tree-component.herokuapp.com/)
 
-## Angular supported version
+## Build & Run
 
-angular-tree-component supports angular 2 and above, and AoT compilation.
+Run `npm run build` to build the library. The build artifacts will be stored in the `dist/angular-tree-component` directory.
+Run `npm run start` to build the library and run the demo on [localhost:4200](http://localhost:4200).
+Run `npm run watch` to run the library and the demo in watch mode.
+Run `npm run lint` to lint the library and the demo.
 
-## Contributing
-
-Run `npm run build` (`npm run build:win` for windows users) to build. Run `npm start:example-app` and open [localhost:4200](http://localhost:4200) to test your code before submitting a pull request.
-
-To run tests locally - make sure port 4200 is available and run:
-
-```
-$ npm run build              # build:win for windows; wait until build finished 
-$ npm run start:example-app  # Wait until webpack finishes and http://localhost:4200 is available
-$ npm run test:dev
-```
-
-Please check the issues / project before starting to work on a feature / bug to make sure it's not already in progress.
+This project currently uses [Angular CLI](https://github.com/angular/angular-cli) version 21.2.25.
 
 ## Contributors
 
